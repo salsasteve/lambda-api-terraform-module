@@ -19,6 +19,12 @@ resource "aws_s3_bucket" "state_bucket" {
   bucket = local.project_name
 }
 
+resource "aws_s3_object" "state_location_key" {
+    bucket = aws_s3_bucket.state_bucket.id
+    key    = "state-file/"
+    source = "/dev/null"
+}
+
 resource "aws_s3_bucket_acl" "state_bucket" {
   bucket = aws_s3_bucket.state_bucket.id
   acl    = "private" 
