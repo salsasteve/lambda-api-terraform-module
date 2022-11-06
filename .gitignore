@@ -32,4 +32,4 @@ terraform.rc
 *.DS_Store
 *.zip
 .terraform.lock.hcl
-*/local.stg.tfvars
+.env/local.stg.tfvars
