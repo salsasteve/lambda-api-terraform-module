@@ -6,34 +6,6 @@ locals {
   project_name = "${var.team}-${var.project}-${var.environment}-${random_string.suffix.result}"
 }
 
-################################
-# Variables
-################################
-
-variable "environment" {
-  type        = string
-  description = "AWS environment"
-  default = "stg"
-}
-
-variable "project" {
-  type        = string
-  description = "Project name that deployed by Terraform."
-  default = "auth-crud-state"
-}
-
-variable "team" {
-  type        = string
-  description = "Team that deployed under Terraform."
-  default = ""
-}
-
-variable "aws_region" {
-  type        = string
-  description = "AWS region"
-  default = "us-east-1"
-}
-
 #########################################
 # S3 bucket for Terraform state storage
 #########################################
